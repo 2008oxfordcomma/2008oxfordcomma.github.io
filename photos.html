@@ -4,16 +4,24 @@
     <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
     <title>Siofra River</title>
     <style>
+        body {
+            background-image: url(Photos/graphy.png);
+        }
         .collage {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
+        }
+        .collage-item {
+            break-inside: avoid;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
         }
         .collage img {
             width: 100%;
             height: auto;
-            object-fit: cover;
-            border-radius: 5px;
+            display: block;
         }
     </style>
 </head>
@@ -21,15 +29,40 @@
     <h1>Test Site</h1>
     <p>Photo Page</p>
     <button onclick="location.href='index.html'">Go to Home</button>
-    <div class="collage">
-        
-        <img src="Photos/DuluthAtNight.jpg" alt="Image 1">
-        <img src="Photos/MadelineIslandBeach.jpg" alt="Image 2">
-        <img src="Photos/MadelineIslandStreet.jpg" alt="Image 3">
-        <img src="Photos/MyDarling.jpg" alt="Image 4">
-        <img src="Photos/NoirDuluthPhoto.jpg" alt="Image 5">
-        <img src="Photos/Pier1.jpg">
+    <div class="collage" id="collage">
+        <div class="collage-item"><img src="Photos/DuluthAtNight.jpg" alt="Image 1"></div>
+        <div class="collage-item"><img src="Photos/MadelineIslandBeach.jpg" alt="Image 2"></div>
+        <div class="collage-item"><img src="Photos/MadelineIslandStreet.jpg" alt="Image 3"></div>
+        <div class="collage-item"><img src="Photos/MyDarling.jpg" alt="Image 4"></div>
+        <div class="collage-item"><img src="Photos/NoirDuluthPhoto.jpg" alt="Image 5"></div>
+        <div class="collage-item"><img src="Photos/Pier1.jpg" alt="Image 6"></div>
+        <div class="collage-item"><img src="Photos/DuluthAtNight.jpg" alt="Image 7"></div>
+        <div class="collage-item"><img src="Photos/MadelineIslandBeach.jpg" alt="Image 8"></div>
+        <div class="collage-item"><img src="Photos/MadelineIslandStreet.jpg" alt="Image 9"></div>
+        <div class="collage-item"><img src="Photos/MyDarling.jpg" alt="Image 10"></div>
     </div>
-    
 </body>
+<script>
+    window.addEventListener('load', function() {
+        const grid = document.querySelector('.collage');
+        const items = grid.querySelectorAll('.collage-item');
+        let columnHeights = [];
+
+        function resizeGridItems() {
+            const columns = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+            columnHeights = new Array(columns).fill(0);
+            
+            items.forEach(item => {
+                item.style.gridRowEnd = 'span 1';
+                const rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'), 10);
+                const gap = parseInt(getComputedStyle(grid).getPropertyValue('gap'), 10);
+                const span = Math.ceil((item.getBoundingClientRect().height + gap) / (rowHeight + gap));
+                item.style.gridRowEnd = `span ${span}`;
+            });
+        }
+
+        resizeGridItems();
+        window.addEventListener('resize', resizeGridItems);
+    });
+</script>
 </html>
