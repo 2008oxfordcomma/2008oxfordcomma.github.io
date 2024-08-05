@@ -1,3 +1,9 @@
+body.home-body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(Photos/bg_main2.gif);
+}
+
 .navbar {
     background-color: #333;
     display: flex;
@@ -34,10 +40,3 @@
 
 h1.home-title {text-align: center;}
 
-body.home-body {
-    background-image: url(Photos/bg_main2.gif);
-    font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-}
