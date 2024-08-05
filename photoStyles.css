@@ -1,10 +1,11 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    overflow-x:hidden;
+    font-family: "proxima-nova", sans-serif;
     background-image: url(Photos/graphy.png);
-}
+  }
 
-.navbar {
+  .navbar {
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -12,31 +13,33 @@ body {
     width: 100%;
     top: 0;
     left: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 255, 255);
     text-align: center;
-}
-
-.navbar-menu {
+  }
+  
+  .navbar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.navbar-menu li {
+  }
+  
+  .navbar-menu li {
     display: inline;
     margin: 0 15px;
-}
-
-.navbar-menu a {
+  }
+  
+  .navbar-menu a {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar-menu a:hover {
+  }
+  
+  .navbar-menu a:hover {
     text-decoration: underline;
-}
+  }
 
 .photo-wall {
     display: grid;

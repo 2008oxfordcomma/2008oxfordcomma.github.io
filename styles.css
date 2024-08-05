@@ -1,43 +1,44 @@
 body {
-    margin: 0;
-    font-family: 'proxima-nova', sans-serif;
-    background-image: url(Photos/graphy.png);
+  margin: 0;
+  overflow-x:hidden;
+  font-family: "proxima-nova", sans-serif;
+  background-image: url(Photos/graphy.png);
 }
 
 .navbar {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: rgb(255, 255, 255);
-    text-align: center;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 .navbar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-menu li {
-    display: inline;
-    margin: 0 15px;
+  display: inline;
+  margin: 0 15px;
 }
 
 .navbar-menu a {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
 }
 
 .navbar-menu a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .playfair-display-italic {
@@ -50,30 +51,49 @@ body {
 }
 
 .playfair-display-normal {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-size: 24px;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
 }
 
 .box1.playfair-display-italic {
-    background-color: #000;
-    color: #fff;
-    opacity: .5;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.5;
 }
 
 div.transbox {
-    display: inline-block;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    background: rgba(145, 145, 145, 0.336);
-    border: 1px solid black;
-  
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  background: rgba(145, 145, 145, 0.336);
+  border: 1px solid black;
 }
 
 div.transbox p {
-    color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(37, 37, 37);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer p.saying {
+    font-family: "Playfair Display", serif;
+    color: rgb(80, 80, 80);
+}
+
+footer p.saying:hover {
+    color:rgb(80, 80, 80);
 }
