@@ -1,4 +1,4 @@
-body.home-body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url(Photos/bg_main2.gif);
@@ -37,6 +37,4 @@ body.home-body {
 .navbar-menu a:hover {
     text-decoration: underline;
 }
-
-h1.home-title {text-align: center;}
 
