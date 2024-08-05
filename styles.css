@@ -97,3 +97,14 @@ footer p.saying {
 footer p.saying:hover {
     color:rgb(80, 80, 80);
 }
+
+@media (max-width: 800px) {
+    footer p.saying {
+        color:rgb(37, 37, 37);
+    }
+
+    footer p.saying:hover {
+        color:rgb(80, 80, 80);
+    }
+}
+    
