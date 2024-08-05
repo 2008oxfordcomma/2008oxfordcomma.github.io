@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  overflow-x:hidden;
+  overflow-x: hidden;
   font-family: "proxima-nova", sans-serif;
   background-image: url(Photos/graphy.png);
 }
@@ -90,18 +90,16 @@ footer {
 }
 
 footer p.saying {
-    font-family: "Playfair Display", serif;
-    color: rgb(80, 80, 80);
+  font-family: "Playfair Display", serif;
+  color: rgb(80, 80, 80);
 }
 
 footer p.saying:hover {
-    color:rgb(80, 80, 80);
+  color: rgb(80, 80, 80);
 }
 
 @media (max-width: 800px) {
-    footer p.saying {
-        display:none;
-    }
-
+  footer p.saying {
+    display: none;
+  }
 }
-    
