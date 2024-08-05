@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     background-image: url(Photos/graphy.png);
 }
 
@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -29,11 +29,48 @@ body {
 }
 
 .navbar-menu a {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
     color: white;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .navbar-menu a:hover {
     text-decoration: underline;
+}
+
+.playfair-display-italic {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+
+.playfair-display-normal {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.box1.playfair-display-italic {
+    background-color: #000;
+    color: #fff;
+    opacity: .5;
+}
+
+div.transbox {
+    margin: 30px;
+    background: rgba(145, 145, 145, 0.336);
+    border: 1px solid black;
+  
+}
+
+div.transbox p {
+    color:rgb(0, 0, 0);
 }
