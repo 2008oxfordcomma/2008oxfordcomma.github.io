@@ -100,11 +100,8 @@ footer p.saying:hover {
 
 @media (max-width: 800px) {
     footer p.saying {
-        color:rgb(37, 37, 37);
+        display:none;
     }
 
-    footer p.saying:hover {
-        color:rgb(80, 80, 80);
-    }
 }
     
