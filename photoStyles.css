@@ -47,15 +47,12 @@ body {
   gap: 10px;
   padding: 10px;
   grid-auto-rows: 1fr;
-  
 }
 
 .photo-item {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background-size: cover;
-  background-position: center;
 }
 
 .photo-item img {
@@ -64,41 +61,6 @@ body {
   object-fit: cover;
 }
 
-.photo-item.loaded > img {
-  opacity: 1;
-}
-
-.photo-item > img {
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
-}
-
-.photo-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  animation: pulse 1.5s infinite;
-}
-
-.photo-item.loaded::before {
-  content: none;
-  animation: none;
-}
-
-@keyframes pulse {
-  0% {
-    background-color: rgba(255, 255, 255, 0);
-  }
-  50% {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    background-color: rgba(255, 255, 255, 0);
-  }
-}
-
-/* 
 .photo-item img:hover {
   transform: scale(1.05);
 }
-*/
