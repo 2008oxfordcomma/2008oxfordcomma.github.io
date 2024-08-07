@@ -46,6 +46,7 @@ body {
   grid-template-columns: repeat(6, minmax(150px, 267px));
   gap: 10px;
   padding-top: 50px;
+  padding-bottom: 50px;
   padding-left: 150px;
   padding-right: 150px;
   grid-auto-rows: 1fr;
@@ -54,7 +55,7 @@ body {
 @media only screen and (max-width: 600px) {
   .photo-wall {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 10px;
     padding: 10px;
     grid-auto-rows: 1fr;
