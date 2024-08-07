@@ -111,3 +111,7 @@ footer p.saying:hover {
     display: none;
   }
 }
+
+.typed-cursor {
+  animation: none;
+}

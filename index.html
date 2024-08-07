@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="styles.css" />
-
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
     </style>
+    <script src="javaScript.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -21,15 +22,45 @@
     <br />
     <div style="text-align: center">
       <div class="transbox">
-        <p class="playfair-display-italic">Hello, I'm Dre.</p>
+        <p class="playfair-display-italic"><span class="auto-type-header"></span></p>
       </div>
+      
+      <script>
+        var typed = new Typed(".auto-type-header", {
+          strings: ["Hello, ^500 I'm Dre."],
+          typeSpeed: 70,
+          loop: false,
+          cursorChar: '|',
+        })
+      </script>
     </div>
     <br />
 
     <div style="text-align: center">
       <div class="transbox">
-        <p class="playfair-display-normal-smaller">This site as a whole is a work-in-progress.</p>
-        <p class="playfair-display-normal-smaller">Unrefinement is to be expected as development continues.</p>
+        <p class="playfair-display-normal-smaller"><span class="auto-type-subtext01"></span></p>
+        <script>
+          var typed = new Typed(".auto-type-subtext01", {
+            strings: ["This site as a whole is a work-in-progress."],
+            typeSpeed: 30,
+            loop: false,
+            cursorChar: '|',
+            startDelay: 2600,
+            showCursor: false,
+          })
+        </script>
+        <p class="playfair-display-normal-smaller"><span class="auto-type-subtext02"></span></p>
+        <script>
+          var typed = new Typed(".auto-type-subtext02", {
+            strings: ["Unrefinement is to be expected as development continues."],
+            typeSpeed: 30,
+            loop: false,
+            cursorChar: '|',
+            startDelay: 5000,
+            showCursor: false,
+          })
+        </script>
+        <p class="playfair-display-normal-smaller"></p>
       </div>
     </div>
   </body>
