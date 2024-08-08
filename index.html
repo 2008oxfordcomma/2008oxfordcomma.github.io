@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+    </style>
+    <script src="javaScript.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-  </style>
-  <script src="javaScript.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-</head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="photos.html">Photography</a></li>
+      </ul>
+    </nav>
+    <br />
+    <div style="text-align: center">
+      <div class="transbox">
+        <p class="playfair-display-italic">
+          <span class="auto-type-header"></span>
+        </p>
+      </div>
 
-<body>
-  <nav class="navbar">
-    <ul class="navbar-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="photos.html">Photography</a></li>
-    </ul>
-  </nav>
-  <br />
-  <div style="text-align: center">
-    <div class="transbox">
-      <p class="playfair-display-italic"><span class="auto-type-header"></span></p>
-    </div>
-
-    <script>
-      var typed = new Typed(".auto-type-header", {
-        strings: ["Hello, ^500 I'm Dre."],
-        typeSpeed: 60,
-        loop: false,
-        cursorChar: '|',
-      })
-    </script>
-  </div>
-  <br />
-
-  <div style="text-align: center">
-    <div class="transbox">
-      <p class="playfair-display-normal-smaller"><span class="auto-type-subtext01"></span></p>
       <script>
-        var typed = new Typed(".auto-type-subtext01", {
+        var typed = new Typed(".auto-type-header", {
+          strings: ["Hello, ^500 I'm Dre."],
+          typeSpeed: 60,
+          loop: false,
+          cursorChar: "|",
+        });
+      </script>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <div class="transbox">
+        <p class="playfair-display-normal-smaller">
+          <span class="auto-type-subtext01"></span>
+        </p>
+        <script>
+          var typed = new Typed(".auto-type-subtext01", {
           strings: ["This site as a whole is a work-in-progress."],
           typeSpeed: 30,
           loop: false,
-          cursorChar: '|',
           showCursor: false,
           startDelay: 2500,
           onComplete: function () {
-            var typed = new Typed(".auto-type-subtext02", {
+            new Typed(".auto-type-subtext02", {
               strings: ["Unrefinement is to be expected as development continues."],
               typeSpeed: 30,
               loop: false,
-              cursorChar: '|',
               showCursor: false,
               startDelay: 500,
               onComplete: function () {
-                var typed = new Typed(".auto-type-subtext03", {
+                new Typed(".auto-type-subtext03", {
                   strings: ["Thank you for your patience."],
                   typeSpeed: 30,
                   loop: false,
-                  cursorChar: '|',
                   showCursor: false,
                   startDelay: 500,
-                })
+                });
               }
-            })
+            });
           }
-        })
-      </script>
-      <p class="playfair-display-normal-smaller"><span class="auto-type-subtext02"></span></p>
-      <p class="playfair-display-normal-smaller"><span class="auto-type-subtext03"></span></p>
+        });
+        </script>
+        <p class="playfair-display-normal-smaller">
+          <span class="auto-type-subtext02"></span>
+        </p>
+        <p class="playfair-display-normal-smaller">
+          <span class="auto-type-subtext03"></span>
+        </p>
+      </div>
     </div>
-  </div>
-</body>
-<footer>
-  <p class="saying">
-    If everything has a beginning, our existence implies the necessity of
-    something eternal. Since we exist, there must be an origin that itself has
-    no origin—this we call the Creator.
-  </p>
-</footer>
-
+  </body>
+  <footer>
+    <p class="saying">
+      If everything has a beginning, our existence implies the necessity of
+      something eternal. Since we exist, there must be an origin that itself has
+      no origin—this we call the Creator.
+    </p>
+  </footer>
 </html>
