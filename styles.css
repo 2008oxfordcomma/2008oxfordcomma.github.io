@@ -6,6 +6,10 @@ body {
   background-color: #1e1c32;
 }
 
+li {
+  list-style-type:none;
+}
+
 .navbar {
   background-color: #333;
   display: flex;
@@ -15,8 +19,13 @@ body {
   top: 0;
   left: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: rgb(255, 255, 255);
+  color: #c6baac;
   text-align: center;
+}
+
+.navbar-menu .active {
+  text-decoration: underline;
+  color: #FFD700;
 }
 
 .navbar-menu {
@@ -34,12 +43,19 @@ body {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  color: white;
+  color: #c6baac;
   text-decoration: none;
 }
 
 .navbar-menu a:hover {
   text-decoration: underline;
+}
+
+.fade-in-text {
+  color: #c6baac;
+  font-size: medium;
+  text-align: center;
+  opacity: 0;
 }
 
 .playfair-display-italic {
@@ -69,8 +85,8 @@ body {
 }
 
 .box1.playfair-display-italic {
-  background-color: #ffffff;
-  color: #fff;
+  background-color: #c6baac;
+  color: #c6baac;
   opacity: 0.5;
 }
 
@@ -93,7 +109,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: rgb(37, 37, 37);
-  color: white;
+  color: #c6baac;
   text-align: center;
   text-decoration: none;
 }

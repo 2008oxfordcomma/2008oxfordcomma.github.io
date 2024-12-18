@@ -10,6 +10,7 @@
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
   </style>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 
 <body>
@@ -23,21 +24,44 @@
   <br />
   <div style="text-align: center">
     <div class="transbox">
-      <p class="playfair-display-italic">About</p>
+      <p class="playfair-display-italic">
+        <span class="auto-type-header"></span>
+      </p>
     </div>
-    <br><br />
-    <div style="text-align: center">
-      <div class="transbox" >
-        <p class="playfair-display-normal">Let me introduce myself.</p>
-        <p class="playfair-display-normal-smaller" style="font-size:medium">I'm an APCS student at Winona State seeking the bridge to electrical engineering.</p>
-        <p class="playfair-display-normal-smaller" style="font-size:medium">B.S. in Applied Computer Science | Expected 2027</p>
-        <p class="playfair-display-normal-smaller" style="font-size:medium">My primary interests lie in communications and data flow, <br>particularly in their application within the power
-          grid sector.<br>On the side, I have a passions for:<br>~ web development <br>~ video game design <br>~ 3d asset creation
-        </p>
-        <p class="playfair-display-normal" >Unrelated to ones and zeros</p>
-        <p class="playfair-display-normal-smaller" style="font: size 15px;">Hobbies include:<br>~ working on 2-stroke scooters & mopeds ~<br>~ solo & group camping ~<br>~ learning Arabic ~<br>~ embroidery ~<br>~ reading ~<br>~ cycling ~</p>
-      </div>
-      <div></div>
+    <script>
+      var typed = new Typed(".auto-type-header", {
+        strings: ["Let me introduce myself"],
+        typeSpeed: 30,
+        loop: false,
+        cursorChar: "|",
+        onComplete: function() {
+          setTimeout(() => {
+            document.getElementById("fade-in-text").style.transition = "opacity 3s";
+            document.getElementById("fade-in-text").style.opacity = "1";
+          }, 50);
+        },
+      });
+    </script>
+    <br>
+    <div id="fade-in-text" class="fade-in-text" style="opacity: 0;">
+      <ul class="playfair-display-normal-smaller">
+        <br>
+          I'm an APCS student at Winona State seeking the bridge to electrical engineering.<br></br>
+          B.S. in Applied Computer Science | Expected 2027<br></br>
+          My primary interests lie in communications and data flow,<br>
+          particularly in their application within the power grid sector.<br>
+          On the side, I have passions for:
+        </section>
+        <li>~ web development ~</li>
+        <li>~ video game design ~</li>
+        <li>~ 3d asset creation ~</li>
+
+        <h3>Unrelated to ones and zeros</h3>
+        <p>Hobbies include:<br>~ working on 2-stroke scooters & mopeds ~<br>~ solo & group camping ~<br>~ learning Arabic ~<br>~ embroidery ~<br>~ reading ~<br>~ cycling ~</p>
+      </ul>
+        
+    </div>
+      
 
     </div>
 </body>

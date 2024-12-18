@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #333;
+  --accent-color: #FFD700;
+  --background-color: #1e1c32;
+  --text-color: #c6baac;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -6,7 +13,7 @@ body {
 }
 
 .navbar {
-  background-color: #333;
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -14,7 +21,7 @@ body {
   top: 0;
   left: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
   text-align: center;
 }
 
