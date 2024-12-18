@@ -2,7 +2,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "proxima-nova", sans-serif;
-  background-image: url(Photos/graphy.png);
+  /* background-image: url(Photos/colored_graphyDark_new_palette.png); */
+  background-color: #1e1c32;
 }
 
 .navbar {
@@ -68,7 +69,7 @@ body {
 }
 
 .box1.playfair-display-italic {
-  background-color: #000;
+  background-color: #ffffff;
   color: #fff;
   opacity: 0.5;
 }
@@ -78,12 +79,12 @@ div.transbox {
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
-  background: rgba(145, 145, 145, 0.336);
-  border: 1px solid black;
+  /* background: rgba(255, 0, 0, 0.336); 
+  border: 1px solid black; */
 }
 
 div.transbox p {
-  color: rgb(0, 0, 0);
+  color: #c6baac;
 }
 
 footer {
