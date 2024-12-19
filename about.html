@@ -9,6 +9,31 @@
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+    details {
+      margin-bottom: 10px;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details summary:hover {
+      color: #555;
+    }
+
+    details ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .fade-in-text {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
   </style>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
@@ -29,41 +54,58 @@
       </p>
     </div>
     <script>
+      // Typing animation
       var typed = new Typed(".auto-type-header", {
         strings: ["Let me introduce myself"],
         typeSpeed: 30,
         loop: false,
         cursorChar: "|",
-        onComplete: function() {
+        onComplete: function () {
           setTimeout(() => {
-            document.getElementById("fade-in-text").style.transition = "opacity 3s";
+            // Fade in all text content sequentially
             document.getElementById("fade-in-text").style.opacity = "1";
-          }, 50);
+            const details = document.querySelectorAll("details");
+            details.forEach((detail, index) => {
+              setTimeout(() => {
+                detail.style.opacity = "1";
+              }, index * 1000); // Delay for each <details>
+            });
+          }, 500); // Initial delay before showing content
         },
       });
     </script>
     <br>
-    <div id="fade-in-text" class="fade-in-text" style="opacity: 0;">
-      <ul class="playfair-display-normal-smaller">
-        <br>
-          I'm an APCS student at Winona State seeking the bridge to electrical engineering.<br></br>
+    <div id="fade-in-text" class="fade-in-text">
+      <details>
+        <summary>Academics</summary>
+        <p>I'm an APCS student at Winona State seeking the bridge to electrical engineering.<br></br>
           B.S. in Applied Computer Science | Expected 2027<br></br>
           My primary interests lie in communications and data flow,<br>
           particularly in their application within the power grid sector.<br>
-          On the side, I have passions for:
-        </section>
-        <li>~ web development ~</li>
-        <li>~ video game design ~</li>
-        <li>~ 3d asset creation ~</li>
-
-        <h3>Unrelated to ones and zeros</h3>
-        <p>Hobbies include:<br>~ working on 2-stroke scooters & mopeds ~<br>~ solo & group camping ~<br>~ learning Arabic ~<br>~ embroidery ~<br>~ reading ~<br>~ cycling ~</p>
-      </ul>
-        
+        </p>
+      </details>
+      <details>
+        <summary>Professional Areas of Interest</summary>
+        <ul>
+          <li>~ web development ~</li>
+          <li>~ video game design ~</li>
+          <li>~ 3d asset creation ~</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Hobbies Outside of Work and School</summary>
+        <p>Unrelated to ones and zeros:</p>
+        <ul>
+          <li>~ working on 2-stroke scooters & mopeds ~</li>
+          <li>~ solo & group camping ~</li>
+          <li>~ learning Arabic ~</li>
+          <li>~ embroidery ~</li>
+          <li>~ reading ~</li>
+          <li>~ cycling ~</li>
+        </ul>
+      </details>
     </div>
-      
-
-    </div>
+  </div>
 </body>
 <footer>
   <p class="saying">
