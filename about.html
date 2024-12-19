@@ -18,10 +18,29 @@
 
     details summary {
       cursor: pointer;
-      font-weight: bold;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      list-style: none; /* Remove default arrow */
+      align-items: center;
     }
 
+    details[open] summary::before {
+    content: "⬇"; /* Down arrow for open state */
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+    }
+
+    details:not([open]) summary::before {
+    content: "➡"; /* Right arrow for closed state */
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+
     details summary:hover {
+      color: #555;
+    }
+
+    details summary::after {
       color: #555;
     }
 
@@ -56,7 +75,7 @@
     <script>
       // Typing animation
       var typed = new Typed(".auto-type-header", {
-        strings: ["Let me introduce myself"],
+        strings: ["↓ Splitting my life up ↓"],
         typeSpeed: 30,
         loop: false,
         cursorChar: "|",
@@ -70,12 +89,17 @@
                 detail.style.opacity = "1";
               }, index * 1000); // Delay for each <details>
             });
-          }, 500); // Initial delay before showing content
+          }, 100); // Initial delay before showing content
         },
       });
     </script>
     <br>
     <div id="fade-in-text" class="fade-in-text">
+      <details>
+        <summary>Contact</summary>
+        <p>Mobile Phone: (608)-738-6942</p>
+        <p>Email: 2008oxfordcomma@gmail.com</p>
+      </details>
       <details>
         <summary>Academics</summary>
         <p>I'm an APCS student at Winona State seeking the bridge to electrical engineering.<br></br>
@@ -94,7 +118,6 @@
       </details>
       <details>
         <summary>Hobbies Outside of Work and School</summary>
-        <p>Unrelated to ones and zeros:</p>
         <ul>
           <li>~ working on 2-stroke scooters & mopeds ~</li>
           <li>~ solo & group camping ~</li>
@@ -104,6 +127,7 @@
           <li>~ cycling ~</li>
         </ul>
       </details>
+      
     </div>
   </div>
 </body>
