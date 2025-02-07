@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="styles.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+      .text-box {
+        max-width: 500px;
+        width: 500px; /* Ensures the box maintains its width */
+        text-align: right;
+        min-height: 100px; /* Prevents shifting due to height changes */
+        white-space: normal; /* Keeps the text on one line */
+        overflow: hidden; /* Ensures extra text does not cause wrapping issues */
+      }
+      .rose-img {
+        width: 461px;
+        height: 592px;
+        object-fit: cover;
+      }
     </style>
     <script src="javaScript.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -21,63 +43,77 @@
       </ul>
     </nav>
     <br />
-    <div style="text-align: center">
-      <div class="transbox">
-        <p class="playfair-display-italic">
-          <span class="auto-type-header"></span>
-        </p>
-      </div>
 
-      <script>
-        var typed = new Typed(".auto-type-header", {
-          strings: ["Hello, ^250 I'm Dre."],
-          typeSpeed: 60,
-          loop: false,
-          cursorChar: "|",
-        });
-      </script>
-    </div>
-    <div style="text-align: center">
-      <div class="transbox">
-        <p class="playfair-display-normal-smaller">
-          <span class="auto-type-subtext01"></span>
-        </p>
+    <div class="container">
+      <img
+        class="rose-img"
+        src="https://static.wixstatic.com/media/0360d7_33e706aba6d8480d9aff262a90a5e977~mv2.gif"
+        alt="rose"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <div class="text-box">
+        <div class="transbox">
+          <p class="playfair-display-italic">
+            <span class="auto-type-header"></span>
+          </p>
+        </div>
+
         <script>
-          var typed = new Typed(".auto-type-subtext01", {
-          strings: ["This site as a whole is a work-in-progress."],
-          typeSpeed: 30,
-          loop: false,
-          showCursor: false,
-          onComplete: function () {
-            new Typed(".auto-type-subtext02", {
-              strings: ["Unrefinement is to be expected as development continues."],
-              typeSpeed: 30,
-              loop: false,
-              showCursor: false,
-              onComplete: function () {
-                new Typed(".auto-type-subtext03", {
-                  strings: ["Thank you for your patience :)"],
-                  typeSpeed: 30,
-                  loop: false,
-                  showCursor: false, 
-                });
-              }
-            });
-          }
-        });
+          var typed = new Typed(".auto-type-header", {
+  strings: ["Hello, ^250 I'm Dre."],
+  typeSpeed: 60,
+  loop: false,
+  showCursor: false,
+  onComplete: function () {
+    setTimeout(function () {
+      new Typed(".auto-type-subtext01", {
+        strings: ["This site as a whole is a work-in-progress."],
+        typeSpeed: 30,
+        loop: false,
+        showCursor: false,
+        onComplete: function () {
+          new Typed(".auto-type-subtext02", {
+            strings: ["Unrefinement is to be expected as development continues."],
+            typeSpeed: 30,
+            loop: false,
+            showCursor: false,
+            onComplete: function () {
+              new Typed(".auto-type-subtext03", {
+                strings: ["Thank you for your patience :)"],
+                typeSpeed: 30,
+                loop: false,
+                showCursor: false,
+              });
+            },
+          });
+        },
+      });
+    }, 500); // Small delay to prevent overlap
+  },
+});
         </script>
-        <p class="playfair-display-normal-smaller">
-          <span class="auto-type-subtext02"></span>
-        </p>
-        <p class="playfair-display-normal-smaller">
-          <span class="auto-type-subtext03"></span>
-        </p>
+
+        <div class="transbox">
+          <p class="playfair-display-normal-smaller">
+            <span class="auto-type-subtext01"></span>
+          </p>
+          <script></script>
+          <p class="playfair-display-normal-smaller">
+            <span class="auto-type-subtext02"></span>
+          </p>
+          <p class="playfair-display-normal-smaller">
+            <span class="auto-type-subtext03"></span>
+          </p>
+        </div>
       </div>
     </div>
   </body>
   <footer>
     <p class="saying">
-      "Everything I'd hoped to find in [a] system - control, order, perfection - none of it mean[s] a thing." - Kevin Flynn
+      "Everything I'd hoped to find in [a] system - control, order, perfection -
+      none of it mean[s] a thing." - Kevin Flynn
     </p>
   </footer>
 </html>
