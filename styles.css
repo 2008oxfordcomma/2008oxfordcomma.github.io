@@ -34,6 +34,26 @@ li {
   margin: 0;
 }
 
+options {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #c6baac;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+options a {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #c6baac;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+options a:hover {
+  text-decoration: underline;
+}
+
 .navbar-menu li {
   display: inline;
   margin: 0 15px;
