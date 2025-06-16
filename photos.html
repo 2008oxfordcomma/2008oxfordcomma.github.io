@@ -6,9 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photo Wall</title>
     <link rel="stylesheet" href="photoStyles.css" />
-
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+        .photo-item {
+            cursor: pointer;
+            box-shadow: 0 2px 16px rgba(224, 10, 10, 0.18);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            z-index: 2;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90vw;
+            height: 90vh;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .lightbox-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 100px 100px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.4s;
+        }
+
+        .lightbox-img.small {
+            filter: blur(16px) brightness(0.8);
+            transform: scale(1.03);
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .lightbox-img.full {
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .lightbox-img.full.loaded {
+            opacity: 1;
+            transition: opacity 0.4s;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 32px;
+            right: 48px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            font-family: sans-serif;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            transition: background 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
@@ -18,156 +109,94 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="photos.html">Photography</a></li>
-            <li><a href="#contact"></a></li>
         </ul>
     </nav>
     <div>
-        <div class="photo-wall">
-            <div class="photo-item" style="background-image: url(smallPhotos/small_AboveTheTrees.webp);background-size:cover">
-                <img src="Photos/AboveTheTrees.webp" alt="Photo 1"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_AnyaSunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/AnyaSunset.webp" alt="Photo 2"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Beach.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Beach.webp" alt="Photo 3"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_BikePhoto.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/BikePhoto.webp" alt="Photo 4"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliDre.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliDre.webp" alt="Photo 5"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower01.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliFlower01.webp" alt="Photo 6"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower02.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliFlower02.webp" alt="Photo 7"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower03.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliFlower03.webp" alt="Photo 8"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower04.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliFlower04.webp" alt="Photo 9"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower05.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Califlower05.webp" alt="Photo 10"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliFlower06.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliFlower06.webp" alt="Photo 11"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliOverlook.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliOverlook.webp" alt="Photo 12"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliWater.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliWater.webp" alt="Photo 13"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliWater01.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliWater01.webp" alt="Photo 14"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliWater02.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliWater02.webp" alt="Photo 15"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CaliWater03.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CaliWater03.webp" alt="Photo 16"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CampingEvening.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CampingEvening.webp" alt="Photo 17"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_CampingGravelRoad.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/CampingGravelRoad.webp" alt="Photo 18"  />
-            </div>
-            <div class="photo-item" style="
-              background-image: url(smallPhotos/small_DowntownRochester02.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/DowntownRochester02.webp" alt="Photo 19"  />
-            </div>
-            <div class="photo-item" style="
-              background-image: url(smallPhotos/small_DownTownRockester01.webp);background-size:cover";loading="lazy">
-                <img src="Photos/DownTownRockester01.webp" alt="Photo 20"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_DuluthAtNight.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/DuluthAtNight.webp" alt="Photo 21"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_DuluthMyDarling01.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/DuluthMyDarling01.webp" alt="Photo 22"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Flower.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Flower.webp" alt="Photo 23"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Glensheen.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Glensheen.webp" alt="Photo 24"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_LakevilleSunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/LakevilleSunset.webp" alt="Photo 25"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_LowExposure1.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/LowExposure1.webp" alt="Photo 26"  />
-            </div>
-            <div class="photo-item" style="
-              background-image: url(smallPhotos/small_MadelineIslandBeach.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/MadelineIslandBeach.webp" alt="Photo 27"  />
-            </div>
-            <div class="photo-item" style="
-              background-image: url(smallPhotos/small_MadelineIslandStreet.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/MadelineIslandStreet.webp" alt="Photo 28"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_MaxDrawing.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/MaxDrawing.webp" alt="Photo 29"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_MaxSunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/MaxSunset.webp" alt="Photo 30"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_MinneapolisAtNight.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/MinneapolisAtNight.webp" alt="Photo 31"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_NicoOnRock.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/NicoOnRock.webp" alt="Photo 33"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_NightClouds.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/NightClouds.webp" alt="Photo 34"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_NoirDuluthPhoto.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/NoirDuluthPhoto.webp" alt="Photo 35"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Pier1.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Pier1.webp" alt="Photo 36"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_QuarryHill.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/QuarryHill.webp" alt="Photo 37"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_SilverLake.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/SilverLake.webp" alt="Photo 38"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Sunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Sunset.webp" alt="Photo 39"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Sunset01.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Sunset01.webp" alt="Photo 40"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Sunset02.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Sunset02.webp" alt="Photo 41"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Sunset03.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Sunset03.webp" alt="Photo 42"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_UPSSunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/UPSSunset.webp" alt="Photo 43"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_Water.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/Water.webp" alt="Photo 44"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_WaterFall.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/WaterFall.webp" alt="Photo 45"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_WaterFarAway.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/WaterFarAway.webp" alt="Photo 46"  />
-            </div>
-            <div class="photo-item" style="background-image: url(smallPhotos/small_WaterSunset.webp);background-size:cover;"loading="lazy">
-                <img src="Photos/WaterSunset.webp" alt="Photo 47"  />
-            </div>
+        <div class="photo-wall" id="photoWall"></div>
+    </div>
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <div class="lightbox-img-wrapper">
+            <img id="lightboxImgSmall" class="lightbox-img small" src="" alt="Preview" />
+            <img id="lightboxImgFull" class="lightbox-img full" src="" alt="Full size photo" />
         </div>
     </div>
-    
+    <script>
+        // List of photo base names (without folder or "small_")
+        const photoList = [
+            "AboveTheTrees", "AnyaSunset", "Beach", "BikePhoto", "CaliDre",
+            "CaliFlower01", "CaliFlower02", "CaliFlower03", "CaliFlower04", "Califlower05",
+            "CaliFlower06", "CaliOverlook", "CaliWater", "CaliWater01", "CaliWater02",
+            "CaliWater03", "CampingEvening", "CampingGravelRoad", "DowntownRochester02", "DownTownRockester01",
+            "DuluthAtNight", "DuluthMyDarling01", "Flower", "Glensheen", "LakevilleSunset",
+            "LowExposure1", "MadelineIslandBeach", "MadelineIslandStreet", "MaxDrawing", "MaxSunset",
+            "MinneapolisAtNight", "NicoOnRock", "NightClouds", "NoirDuluthPhoto", "Pier1",
+            "QuarryHill", "SilverLake", "Sunset", "Sunset01", "Sunset02",
+            "Sunset03", "UPSSunset", "Water", "WaterFall", "WaterFarAway", "WaterSunset"
+        ];
+        const photoWall = document.getElementById('photoWall');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImgSmall = document.getElementById('lightboxImgSmall');
+        const lightboxImgFull = document.getElementById('lightboxImgFull');
+
+        photoList.forEach((name, i) => {
+            const div = document.createElement('div');
+            div.className = 'photo-item';
+            div.title = `Click to view`;
+            div.innerHTML = `<img 
+                src="smallPhotos/small_${name}.webp" 
+                alt="Photo ${i + 1}" 
+                loading="lazy"
+                data-full="Photos/${name}.webp"
+                data-small="smallPhotos/small_${name}.webp"
+                style="background:#222;display:block;width:100%;height:100%;object-fit:cover;"
+            />`;
+            div.onclick = (e) => {
+                const img = div.querySelector('img');
+                const smallSrc = img.getAttribute('data-small');
+                const fullSrc = img.getAttribute('data-full');
+                // Show small image blurred and scaled up
+                lightboxImgSmall.src = smallSrc;
+                lightboxImgSmall.style.opacity = "1";
+                // Hide full image until loaded
+                lightboxImgFull.src = "";
+                lightboxImgFull.classList.remove("loaded");
+                lightbox.classList.add('active');
+                // Preload full image
+                lightboxImgFull.src = fullSrc;
+                lightboxImgFull.onload = () => {
+                    lightboxImgFull.classList.add("loaded");
+                };
+            };
+            photoWall.appendChild(div);
+        });
+
+        // Lightbox close logic
+        document.getElementById('lightboxClose').onclick = () => {
+            lightbox.classList.remove('active');
+            lightboxImgSmall.src = '';
+            lightboxImgFull.src = '';
+            lightboxImgFull.classList.remove("loaded");
+        };
+        lightbox.onclick = (e) => {
+            if (e.target === e.currentTarget) {
+                lightbox.classList.remove('active');
+                lightboxImgSmall.src = '';
+                lightboxImgFull.src = '';
+                lightboxImgFull.classList.remove("loaded");
+            }
+        };
+        // Optional: close with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove('active');
+                lightboxImgSmall.src = '';
+                lightboxImgFull.src = '';
+                lightboxImgFull.classList.remove("loaded");
+            }
+        });
+    </script>
 </body>
 
 </html>
