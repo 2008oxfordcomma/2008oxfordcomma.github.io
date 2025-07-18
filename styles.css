@@ -1,12 +1,27 @@
-a.workingSiteButton {
-  text-decoration: none;
-}
-p {
-  display: inline-block;
+.aboutMeButton {
+  display: flex;
+  color: black;
+  text-decoration: underline;
 }
 
-p.workingSiteLabel {
-  display: block;
+a[href$=".html"] {
+  color: black;
+}
+
+.mainText {
   text-align: center;
-  text-decoration:underline;
+}
+
+.mainText .doors {
+ display:flex; 
+ align-items: center; 
+ justify-content: center;
+}
+
+.backButton {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
 }
