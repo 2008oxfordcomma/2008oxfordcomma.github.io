@@ -1,11 +1,10 @@
-.aboutMeButton {
+.navButtons {
   display: flex;
-  color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a[href$=".html"] {
-  color: black;
+  color: #B00020;
 }
 
 .mainText {
@@ -16,6 +15,10 @@ a[href$=".html"] {
  display:flex; 
  align-items: center; 
  justify-content: center;
+}
+
+div.aboutContent{
+  color: #E5E5E5;
 }
 
 .backButton {
