@@ -3,8 +3,12 @@
   text-decoration: none;
 }
 
-a[href$=".html"] {
+/* a[href$=".html"] {
   color: #B00020;
+} */
+
+.doors .navButtons {
+color: #B00020;
 }
 
 .mainText {
@@ -15,10 +19,6 @@ a[href$=".html"] {
  display:flex; 
  align-items: center; 
  justify-content: center;
-}
-
-div.aboutContent{
-  color: #E5E5E5;
 }
 
 .backButton {
