@@ -13,6 +13,8 @@ color: #B00020;
 
 .mainText {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .mainText .doors {
@@ -28,3 +30,23 @@ color: #B00020;
 ul {
   list-style-type: none;
 }
+
+.lobbyBody {
+  background-color: #535353;
+  background-image: url('Assets/webrite\ background.gif');
+  background-size: 90% auto;         /* Makes it fill the screen */
+  background-repeat: no-repeat;   /* Prevents tiling */
+  background-position: 85% center;    /* Centers the image */
+  background-attachment: fixed;   /* Makes it stay still on scroll */
+}
+
+.backgroundOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(240, 240, 240, 0.9); /* Adjust the alpha for opacity */
+  z-index: 0;
+}
+
