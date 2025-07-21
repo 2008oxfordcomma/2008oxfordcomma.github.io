@@ -34,9 +34,9 @@ ul {
 .lobbyBody {
   background-color: #535353;
   background-image: url('Assets/webrite\ background.gif');
-  background-size: 90% auto;         /* Makes it fill the screen */
+  background-size: auto 100vh;         /* Makes it fill the screen */
   background-repeat: no-repeat;   /* Prevents tiling */
-  background-position: 85% center;    /* Centers the image */
+  background-position: 30% center;    /* Centers the image */
   background-attachment: fixed;   /* Makes it stay still on scroll */
 }
 
@@ -49,4 +49,6 @@ ul {
   background: rgba(240, 240, 240, 0.9); /* Adjust the alpha for opacity */
   z-index: 0;
 }
+
+
 
