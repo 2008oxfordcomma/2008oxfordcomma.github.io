@@ -50,5 +50,12 @@ ul {
   z-index: 0;
 }
 
+.conduct-list li b {
+  text-decoration: underline;
+}
+
+.conduct-list li {
+  padding-bottom: 5px;
+}
 
 
