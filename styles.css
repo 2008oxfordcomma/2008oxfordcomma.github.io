@@ -8,6 +8,14 @@
   color: #B00020;
 }
 
+.placeholderText {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* ensure text is readable on dark overlay */
+  color: black;
+}
+
 .mainText {
   text-align: center;
   position: relative;
