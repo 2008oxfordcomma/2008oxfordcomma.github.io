@@ -24,7 +24,7 @@
             (function() {
                 var img = new Image();
                 // Use the same path used in CSS
-                img.src = 'Assets/webrite background.gif';
+                img.src = 'Assets/website background.gif';
                 // If cached, this may be synchronous; still handle both cases
                 function apply() {
                     document.body.classList.add('bg-loaded');
@@ -38,7 +38,7 @@
             })();
         </script>
 
-        <!-- fallback for users with JS disabled: show a darker static background via inline style on the body -->
+        <!-- fallback for users with JS disabled -->
         <noscript>
             <style>
                 .lobbyBody::before { opacity: 1 !important; }
