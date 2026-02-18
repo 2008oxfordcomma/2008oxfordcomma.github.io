@@ -52,6 +52,15 @@
   box-shadow: 0 10px 28px rgba(0,0,0,0.10);
 }
 
+/* Intro + transition helpers for combining intro (lightswitch) and lobby in one file */
+.introContent {
+  text-align: center;
+  padding-top: 28vh;
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.hidden { opacity: 0; transform: translateY(8px); pointer-events: none; }
+.visible { opacity: 1; transform: translateY(0); }
+
 @media (max-width: 480px) {
   .aboutContent .backButton {
     display: block;
@@ -73,36 +82,6 @@ ul {
   color: #4e3e3e;
 }
 
-
-.lobbyBody {
-  background-color: #000;
-  min-height: 100vh;
-  color: #eee;
-  position: relative;
-}
-
-.lobbyBody::before {
-  content: "";
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background-image: url('Assets/webrite background.gif');
-  background-position: 30% center;
-  background-repeat: no-repeat;
-  background-size: auto 100vh;
-  background-attachment: fixed;
-  background-color: rgba(0,0,0,0.6);
-  background-blend-mode: overlay;
-  filter: brightness(0.95) saturate(0.9);
-  opacity: 0;
-  transition: opacity 700ms ease;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.lobbyBody.bg-loaded::before {
-  opacity: 1;
-}
-
 .mainText {
   position: relative;
   z-index: 2;
@@ -110,16 +89,6 @@ ul {
 
 .lobbyBody > .backgroundOverlay {
   display: none;
-}
-
-.backgroundOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.97);
-  z-index: 0;
 }
 
 .aboutMeBody {
