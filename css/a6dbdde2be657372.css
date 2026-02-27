@@ -1,0 +1,365 @@
+/* Consolidated CSS - Preserves original styling, removes unused code */
+
+/* Font faces - keeping both fonts as they're likely referenced */
+@font-face {
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(../fonts/25b0293b23271008-s.woff2) format("woff2");
+  unicode-range: u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7, u+02dd-02ff, u+0304, u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(../fonts/935cd3e4028ff59e-s.p.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: Schibsted Grotesk Fallback;
+  src: local("Arial");
+  ascent-override: 93.46%;
+  descent-override: 24.67%;
+  line-gap-override: 0%;
+  size-adjust: 104.49%;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/886030b0b59bc5a7-s.woff2) format("woff2");
+  unicode-range: u+0460-052f, u+1c80-1c8a, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/0aa834ed78bf6d07-s.woff2) format("woff2");
+  unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/67957d42bae0796d-s.woff2) format("woff2");
+  unicode-range: u+0370-0377, u+037a-037f, u+0384-038a, u+038c, u+038e-03a1, u+03a3-03ff;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/f911b923c6adde36-s.woff2) format("woff2");
+  unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1, u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329, u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/939c4f875ee75fbb-s.woff2) format("woff2");
+  unicode-range: u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7, u+02dd-02ff, u+0304, u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url(../fonts/bb3ef058b751a6ad-s.p.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+@font-face {
+  font-family: JetBrains Mono Fallback;
+  src: local("Arial");
+  ascent-override: 75.79%;
+  descent-override: 22.29%;
+  line-gap-override: 0%;
+  size-adjust: 134.59%;
+}
+
+/* CSS variables - only those referenced in used classes */
+:root {
+  --_15w5655: 1rem;
+  --_19zu66d: 0.25rem;
+  --_q4qsad: 0.5rem;
+  --_xquwnp: 0.75rem;
+  --_1r5yska: 0.375rem;
+  --_1fb4egq: 1.25rem;
+  --_wvvty5: 1.5rem;
+  --_les0z8: 9999px;
+  --_8y945n: oklch(0.93 0.007 233.66);
+  --_tnwyjx: oklch(0.99 0.003 233.66);
+  --_pnkjs3: oklch(0.15 0.023 233.66);
+  --_o3mbkl: oklch(0.72 0.011 233.66);
+  --_m09s7l: oklch(0.44 0.015 233.66);
+  --_1ni1213: oklch(0.22 0.021 233.66);
+  --_1m78i7q: oklch(0.55 0.013 233.66);
+  --_11d15me: oklch(0.37 0.017 233.66);
+  --_mfom0p: oklch(0.66 0.23 239.11);
+  --_1dra4vn: oklch(0.76 0.23 49.02);
+  --_ckpqia: oklch(0.73 0.23 25.46);
+  --_1ykqztv: currentColor;
+  --font-sans: "Schibsted Grotesk", "Schibsted Grotesk Fallback", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --_jmbghm: var(--font-sans);
+  --_zxchhs: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --_1w42bi0: 0.875rem;
+  --_ayrqvg: 1.125rem;
+  --_1nywcrj: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --_8y945n: oklch(0.28 0.019 233.66);
+    --_tnwyjx: oklch(0.15 0.023 233.66);
+    --_pnkjs3: oklch(0.93 0.007 233.66);
+    --_o3mbkl: oklch(0.44 0.015 233.66);
+    --_m09s7l: oklch(0.55 0.013 233.66);
+    --_1ni1213: oklch(0.97 0.005 233.66);
+    --_1m78i7q: oklch(0.72 0.011 233.66);
+    --_11d15me: oklch(0.87 0.009 233.66);
+    --_1dra4vn: oklch(0.68 0.21 49.02);
+    --_ckpqia: oklch(0.66 0.21 25.46);
+  }
+}
+
+/* Base styles from reset layer - only essential elements */
+*,
+:after,
+:before {
+  border-color: oklch(var(--color-gray-200) / 1);
+  border-style: solid;
+  border-width: 0;
+  box-sizing: border-box;
+}
+:after,
+:before {
+  --tw-content: "";
+}
+:host,
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Times New Roman", Times, serif;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  line-height: inherit;
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+button {
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+blockquote,
+dd,
+dl,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: var(--_zxchhs);
+}
+
+/* Used utility classes - all classes that appear in the HTML */
+._1aiwd56:not(#\#) {
+  background: var(--_tnwyjx);
+}
+._i1bzpt:not(#\#):not(#\#):not(#\#) {
+  color: var(--_pnkjs3);
+}
+._78zum5:not(#\#):not(#\#):not(#\#) {
+  display: flex;
+}
+._1us19tq:not(#\#):not(#\#):not(#\#):not(#\#) {
+  min-height: 100%;
+}
+._jp7ctv:not(#\#):not(#\#):not(#\#) {
+  display: contents;
+}
+._1iyjqo2:not(#\#):not(#\#):not(#\#) {
+  flex-grow: 1;
+}
+._6s0dn4:not(#\#):not(#\#):not(#\#) {
+  align-items: center;
+}
+._dt5ytf:not(#\#):not(#\#):not(#\#) {
+  flex-direction: column;
+}
+._l56j7k:not(#\#):not(#\#):not(#\#) {
+  justify-content: center;
+}
+._b3r6kr:not(#\#):not(#\#) {
+  overflow: hidden;
+}
+._d9au3t:not(#\#):not(#\#) {
+  border-radius: var(--_15w5655);
+}
+._ixhlqf:not(#\#):not(#\#) {
+  gap: var(--_xquwnp);
+}
+._bym6vc:not(#\#):not(#\#) {
+  padding: var(--_15w5655);
+}
+._1n327nk:not(#\#):not(#\#):not(#\#) {
+  z-index: 10;
+}
+._k50ysn:not(#\#):not(#\#):not(#\#) {
+  font-weight: 500;
+}
+._7h13wz:not(#\#):not(#\#):not(#\#) {
+  letter-spacing: -0.0125em;
+}
+._1y5e3q9:not(#\#):not(#\#):not(#\#) {
+  aspect-ratio: 1/1;
+}
+._x20hqb:not(#\#):not(#\#) {
+  border-radius: 2rem;
+}
+._1qj20:not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: 4.75rem;
+}
+._7giv3:not(#\#):not(#\#) {
+  overflow: clip;
+}
+._1n2onr6:not(#\#):not(#\#):not(#\#) {
+  position: relative;
+}
+._87ps6o:not(#\#):not(#\#):not(#\#) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+._10no89f:not(#\#):not(#\#) {
+  inset-block: 0;
+}
+._10l6tqk:not(#\#):not(#\#):not(#\#) {
+  position: absolute;
+}
+._1t7vhrs:not(#\#):not(#\#):not(#\#) {
+  font-size: var(--_ayrqvg);
+}
+._1w2564m:not(#\#):not(#\#):not(#\#) {
+  color: var(--_o3mbkl);
+}
+._1ya0g4u:not(#\#):not(#\#):not(#\#) {
+  color: var(--_m09s7l);
+}
+._ea1g6h:not(#\#):not(#\#):not(#\#) {
+  font-size: var(--_1nywcrj);
+}
+._1lszv81:not(#\#):not(#\#):not(#\#) {
+  color: var(--_11d15me);
+}
+._vg646p:not(#\#):not(#\#):not(#\#):not(#\#) {
+  margin-top: var(--_q4qsad);
+}
+._nrjsw1:not(#\#):not(#\#):not(#\#) {
+  font-size: var(--_1w42bi0);
+}
+._1gj3iac:not(#\#):not(#\#) {
+  gap: var(--_19zu66d);
+}
+._rsr7w8:not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--_15w5655);
+}
+._1rg5ohu:not(#\#):not(#\#):not(#\#) {
+  display: inline-block;
+}
+._xmnuy4:not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--_15w5655);
+}
+._1a02dak:not(#\#):not(#\#):not(#\#) {
+  flex-wrap: wrap;
+}
+._17d4w8g:not(#\#):not(#\#) {
+  gap: 6px;
+}
+._1fy79fb:not(#\#):not(#\#):not(#\#):not(#\#) {
+  max-width: 22.8rem;
+}
+._hwku2h:not(#\#):not(#\#):not(#\#) {
+  background-blend-mode: luminosity;
+}
+._rsfsmv:not(#\#):not(#\#) {
+  border-color: var(--_8y945n);
+}
+._s4c7im:not(#\#):not(#\#) {
+  border-radius: var(--_les0z8);
+}
+._1y0btm7:not(#\#):not(#\#) {
+  border-style: solid;
+}
+._mkeg23:not(#\#):not(#\#) {
+  border-width: 1px;
+}
+._1u89fgu:not(#\#):not(#\#):not(#\#) {
+  color: var(--_1ni1213);
+}
+._3nfvp2:not(#\#):not(#\#):not(#\#) {
+  display: inline-flex;
+}
+._1p46wwl:not(#\#):not(#\#) {
+  padding-block: var(--_19zu66d);
+}
+._i8ond5:not(#\#):not(#\#) {
+  padding-inline: var(--_q4qsad);
+}
+._117rol3:not(#\#):not(#\#):not(#\#) {
+  fill: currentColor;
+}
+._s83m0k:not(#\#):not(#\#):not(#\#) {
+  flex-shrink: 1;
+}
+._eq5yr9:not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* Dark mode adjustments for SVG fills */
+@media (prefers-color-scheme: dark) {
+  ._117rol3:not(#\#):not(#\#):not(#\#) {
+    fill: currentColor;
+  }
+}
