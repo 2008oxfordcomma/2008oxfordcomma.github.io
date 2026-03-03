@@ -1,6 +1,3 @@
-/* Consolidated CSS - Preserves original styling, removes unused code */
-
-/* Font faces - keeping both fonts as they're likely referenced */
 @font-face {
   font-family: Schibsted Grotesk;
   font-style: normal;
@@ -82,7 +79,6 @@
   size-adjust: 134.59%;
 }
 
-/* CSS variables - only those referenced in used classes */
 :root {
   --_15w5655: 1rem;
   --_19zu66d: 0.25rem;
@@ -127,7 +123,6 @@
   }
 }
 
-/* Base styles from reset layer - only essential elements */
 *,
 :after,
 :before {
